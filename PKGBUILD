@@ -9,10 +9,11 @@ license=("GPL3")
 depends=("xsel"
     "zenity"
     "xdotool")
-source=("${pkgname}::git+https://github.com/leehblue/texpander")
-md5sums=("SKIP")
+_tag="cd53b183d147329ba5f5fc37abc8c671124217e9"
+source=("${pkgname}-${_tag}.zip::https://github.com/leehblue/texpander/archive/${_tag}.zip")
+sha1sums=("25302d3cd2b7e2bf7547aadc9872738fdeea6c16")
 
 package() {
-    cd ${pkgname}
+    cd ${pkgname}-${_tag}
     install -Dm755 texpander.sh ${pkgdir}/usr/bin/texpander
 }
